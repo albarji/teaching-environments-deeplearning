@@ -2,16 +2,13 @@
 
 |Linux|Mac OS X|Windows|
 |-----|--------|-------|
-|[![Build Status](https://travis-ci.org/albarji/teaching-environments-deeplearning.svg?branch=master)](https://travis-ci.org/albarji/teaching-environments)|[![Build Status](https://travis-ci.org/albarji/teaching-environments-deeplearning.svg?branch=master)](https://travis-ci.org/albarji/teaching-environments-deeplearning)|[![Build status](https://ci.appveyor.com/api/projects/status/jb3rcrh3n0pavv5c?svg=true)](https://ci.appveyor.com/project/albarji/teaching-environments-deeplearning)|
+|[![Build Status](https://travis-ci.org/albarji/teaching-environments-deeplearning.svg?branch=master)](https://travis-ci.org/albarji/teaching-environments)|NOT SUPPORTED|[![Build status](https://ci.appveyor.com/api/projects/status/gl455s5l3pqyg3il?svg=true)](https://ci.appveyor.com/project/albarji/teaching-environments-deeplearning)|
 
 Conda environments for Deep Learning lectures.
 
 ## Usage
 
 First install a **Python 3, 64-bits** [Conda distribution](https://anaconda.org/anaconda/python). If you are using Windows make sure you install Anaconda only for your current user, and under a folder that does not contain non-UTF characters (such as **ñ** or **á**). After installing follow the instructions for your particular operative system. It is **highly recommended** that you use a machine with an nVidia GPU.
-
-
-Note that **Mac is not supported** by these environments.
 
 ## Linux
 
@@ -79,7 +76,7 @@ If after installing the environment you are unable to run keras or tensorflow, p
 
 2. Create the environment from scratch
 
-    conda env create -n deeplearning-labs python=3.6
+    conda env create -n deeplearning-labs
 
 3. Log into the environment
 
