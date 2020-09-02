@@ -7,14 +7,6 @@ environment:
 
   matrix:
 
-    - PYTHON: "C:\\Python33-x64"
-      PYTHON_VERSION: "3.3.x"
-      PYTHON_ARCH: "64"
-
-    - PYTHON: "C:\\Python34-x64"
-      PYTHON_VERSION: "3.4.x"
-      PYTHON_ARCH: "64"
-
     - PYTHON: "C:\\Python35-x64"
       PYTHON_VERSION: "3.5.x"
       PYTHON_ARCH: "64"
@@ -22,6 +14,14 @@ environment:
     - PYTHON: "C:\\Python36-x64"
       PYTHON_VERSION: "3.6.x"
       PYTHON_ARCH: "64"
+
+    - PYTHON: "C:\\Python37-x64"
+    PYTHON_VERSION: "3.7.x"
+    PYTHON_ARCH: "64"
+
+    - PYTHON: "C:\\Python38-x64"
+    PYTHON_VERSION: "3.8.x"
+    PYTHON_ARCH: "64"
 
 install:
   # If there is a newer build queued for the same PR, cancel this one.
@@ -53,12 +53,5 @@ test_script:
   # Create environments
   - conda env create -v -f deeplearning/environment-windows.yml
   - conda env create -v -f deeplearning/environment-windows-gpu.yml
-  - conda env create -v -f SVMs/environment-windows.yml
-  - conda env create -v -f textmining/environment.yml
-  - conda env create -v -f ensembles/environment.yml
   # Run tests
-  - activate deeplearning-labs && pip install nose && nosetests deeplearning && deactivate
-  - activate svm-labs && pip install nose && conda list && nosetests SVMs && deactivate
-  - activate textmining-labs && pip install nose && conda list && nosetests textmining && deactivate
-  - activate ensembles-labs && pip install nose && conda list && nosetests ensembles && deactivate
-
+  - activate deeplearning-labs && pip install pytest && pytest tests.py && deactivate

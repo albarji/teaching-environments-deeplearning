@@ -3,16 +3,6 @@ matrix:
     include:
         - os: linux
           sudo: required
-          python: "3.3"
-          dist: trusty
-
-        - os: linux
-          sudo: required
-          python: "3.4"
-          dist: trusty
-
-        - os: linux
-          sudo: required
           python: "3.5"
           dist: trusty
 
@@ -21,21 +11,15 @@ matrix:
           python: "3.6"
           dist: trusty
 
-        - os: osx
-          language: generic
-          python: "3.3"
+          - os: linux
+          sudo: required
+          python: "3.7"
+          dist: trusty
 
-        - os: osx
-          language: generic
-          python: "3.4"
-
-        - os: osx
-          language: generic
-          python: "3.5"
-
-        - os: osx
-          language: generic
-          python: "3.6"
+          - os: linux
+          sudo: required
+          python: "3.8"
+          dist: trusty
 
 before_install:
   # Install miniconda3
@@ -45,13 +29,7 @@ before_install:
   - export BOTO_CONFIG=/dev/null
 install:
   # Create environments
-  - if [ "$TRAVIS_OS_NAME" = linux ]; then conda env create -v -f deeplearning/environment-linux.yml; fi
-  - if [ "$TRAVIS_OS_NAME" = linux ]; then conda env create -v -f deeplearning/environment-linux-gpu.yml; fi
-  - conda env create -v -f SVMs/environment-linux.yml
-  - conda env create -v -f textmining/environment.yml
-  - conda env create -v -f ensembles/environment.yml
+  - conda env create -v -f environment-linux.yml
+  - conda env create -v -f environment-linux-gpu.yml
 script:
-  - if [ "$TRAVIS_OS_NAME" = linux ]; then source activate deeplearning-labs && pip install nose && nosetests deeplearning; fi
-  - source activate svm-labs && pip install nose && nosetests SVMs
-  - source activate textmining-labs && pip install nose && nosetests textmining
-  - source activate ensembles-labs && pip install nose && nosetests ensembles
+  - source activate deeplearning-labs && pip install pytest && pytest tests.py
