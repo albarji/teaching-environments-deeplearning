@@ -2,7 +2,7 @@
 
 |Linux|Mac OS X|Windows|
 |-----|--------|-------|
-|[![Build Status](https://travis-ci.org/albarji/teaching-environments-deeplearning.svg?branch=master)](https://travis-ci.org/albarji/teaching-environments)|NOT SUPPORTED|[![Build status](https://ci.appveyor.com/api/projects/status/gl455s5l3pqyg3il?svg=true)](https://ci.appveyor.com/project/albarji/teaching-environments-deeplearning)|
+|[![Build Status](https://travis-ci.com/albarji/teaching-environments-deeplearning.svg?branch=master)](https://travis-ci.com/albarji/teaching-environments-deeplearning)|NOT SUPPORTED|[![Build status](https://ci.appveyor.com/api/projects/status/gl455s5l3pqyg3il?svg=true)](https://ci.appveyor.com/project/albarji/teaching-environments-deeplearning)|
 
 Conda environments for Deep Learning lectures.
 
